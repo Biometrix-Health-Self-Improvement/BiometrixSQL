@@ -1,7 +1,4 @@
-rocketjpserver.cktljt0phf7d.us-west-2.rds.amazonaws.com,1433'
+rocketjpserver.cktljt0phf7d.us-west-2.rds.amazonaws.com,1433
 
 Username is Giovanni
-Password BlastingOff!
-
-This is security risk; pass is visible to public
-ALSO: Link is inaccessible to me, how do I use this? Tried from SQL server, browser, and Amazon
+Password is available on MeisterTask, or on chat group message

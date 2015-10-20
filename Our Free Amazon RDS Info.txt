@@ -4,3 +4,4 @@ Username is Giovanni
 Password BlastingOff!
 
 This is security risk; pass is visible to public
+ALSO: Link is inaccessible to me, how do I use this? Tried from SQL server, browser, and Amazon

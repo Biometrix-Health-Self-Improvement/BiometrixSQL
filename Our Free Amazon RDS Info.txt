@@ -2,3 +2,5 @@ rocketjpserver.cktljt0phf7d.us-west-2.rds.amazonaws.com,1433'
 
 Username is Giovanni
 Password BlastingOff!
+
+This is security risk; pass is visible to public

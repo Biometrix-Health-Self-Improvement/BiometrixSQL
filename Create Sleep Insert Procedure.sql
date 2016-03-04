@@ -19,17 +19,17 @@ Set @UserID2 = TRY_CONVERT(INT, @UserID);
 Set @LocalSleepID2 = TRY_CONVERT(INT, @LocalSleepID);
 Set @Quality2 = TRY_CONVERT(INT, @Quality);
 
-IF @UserID2 = 0
+IF @UserID = ''
 BEGIN
 	Set @UserID2 = NULL;
 END
 
-IF @LocalSleepID2 = 0
+IF @LocalSleepID = ''
 BEGIN
 	Set @LocalSleepID2 = NULL;
 END
 
-IF @Quality2 = 0
+IF @Quality = ''
 BEGIN
 	Set @Quality2 = NULL;
 END

@@ -8,8 +8,9 @@ END
 GO
 
 CREATE TABLE [dbo].[Exercise](
-	[ExerciseID] INT PRIMARY KEY Identity(1,1)
+	[WebExerciseID] INT PRIMARY KEY Identity(1,1)
 	, [UserID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[LoginTable]
+	, [LocalExerciseID] INT NULL
 	, [Title] VARCHAR(255) NULL
 	, [Type] VARCHAR(140) NULL
 	, [Minutes] TINYINT NULL

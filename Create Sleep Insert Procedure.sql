@@ -6,8 +6,8 @@ DROP PROCEDURE SleepInsert
 END
 GO
 
-CREATE PROCEDURE SleepInsert @UserID INT, @LocalSleepID INT, @Date DATE, 
-@Time TIME, @Duration TIME, @Quality INT, @Notes VARCHAR(300), @Health VARCHAR(20)
+CREATE PROCEDURE SleepInsert @UserID VARCHAR(50), @LocalSleepID VARCHAR(50), @Date DATE, 
+@Time TIME, @Duration TIME, @Quality VARCHAR(50), @Notes VARCHAR(300), @Health VARCHAR(20)
 AS
 
 DECLARE @UserID2 INT;

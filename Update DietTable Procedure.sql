@@ -1,15 +1,16 @@
 Use Biometrix
 GO
-if Object_ID('DietInsert') is NOT NULL
+if Object_ID('DietUpdate') is NOT NULL
 BEGIN
-DROP PROCEDURE DietInsert
+DROP PROCEDURE DietUpdate
 END
 GO
 
-CREATE PROCEDURE DietInsert @UserID VARCHAR(50), @LocalDietID VARCHAR(50), @Date DATE, @FoodType VARCHAR(40), 
+CREATE PROCEDURE DietUpdate @UserID VARCHAR(50), @LocalDietID VARCHAR(50), @Date DATE, @FoodType VARCHAR(40), 
 @Meal VARCHAR(20), @ServingSize VARCHAR(20), @Calories VARCHAR(50), @TotalFat VARCHAR(50), @SaturatedFat VARCHAR(50),
 @TransFat VARCHAR(50), @Cholesterol VARCHAR(50), @Sodium VARCHAR(50), @TotalCarbs VARCHAR(50), @DietaryFiber VARCHAR(50), @Sugars VARCHAR(50),
-@Protein VARCHAR(50), @VitaminA VARCHAR(50), @VitaminB VARCHAR(50), @Calcium VARCHAR(50), @Iron VARCHAR(50), @Notes VARCHAR(255)
+@Protein VARCHAR(50), @VitaminA VARCHAR(50), @VitaminB VARCHAR(50), @Calcium VARCHAR(50), @Iron VARCHAR(50), @Notes VARCHAR(255),
+@WebDietID VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -108,15 +109,18 @@ IF @Iron = ''
 BEGIN
     Set @Iron2 = NULL;
 END
+DECLARE @WebDietID2 INT;
+Set @WebDietID2 = TRY_CONVERT(INT, @WebDietID);
+IF @WebDietID = ''
+BEGIN
+    Set @WebDietID2 = NULL;
+END
 
 
-Insert Into dbo.Diet
-([UserID], [LocalDietID], [Date], [FoodType], [Meal], [ServingSize], [Calories], [TotalFat],
-[SaturatedFat], [TransFat], [Cholesterol], [Sodium], [TotalCarbs], [DietaryFiber],
-[Sugars], [Protein], [VitaminA], [VitaminB], [Calcium], [Iron], [Notes])
-Values
-(@UserID2, @LocalDietID2, @Date, @FoodType, @Meal, @ServingSize, @Calories2, @TotalFat2,
-@SaturatedFat2, @TransFat2, @Cholesterol2, @Sodium2, @TotalCarbs2, @DietaryFiber2, 
-@Sugars2, @Protein2, @VitaminA2, @VitaminB2, @Calcium2, @Iron2, @Notes)
+Update dbo.Diet
+Set [LocalDietID] = @LocalDietID2, [Date] = @Date, [FoodType] = @FoodType, [Meal] = @Meal, [ServingSize] = @ServingSize, [Calories] = @Calories2, [TotalFat] = @TotalFat2,
+[SaturatedFat] = @SaturatedFat2, [TransFat] = @TransFat2, [Cholesterol] = @Cholesterol2, [Sodium] = @Sodium2, [TotalCarbs] = @TotalCarbs2, [DietaryFiber] = @DietaryFiber2,
+[Sugars] = @Sugars2, [Protein] = @Protein2, [VitaminA] = @VitaminA2, [VitaminB] = @VitaminB2, [Calcium] = @Calcium2, [Iron] = @Iron2, [Notes] = @Notes
+WHERE [UserID] = @UserID2 AND [WebDietID] = @WebDietID2
 GO
 

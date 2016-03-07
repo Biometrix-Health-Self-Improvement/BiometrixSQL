@@ -67,7 +67,7 @@ END
 Insert Into dbo.Exercise
 ([UserID], [LocalExerciseID], [Title], [Type], [Minutes], [Reps], [Laps], [Weight], [Inty], [Notes], [DateEx], [TimeEx])
 Values
-(@UserID2, @LocalExerciseID, @Title, @Type, @Minutes2, @Reps2, @Laps2, @Weight2, @Inty2, @Notes, @DateEx, @TimeEx)
+(@UserID2, @LocalExerciseID2, @Title, @Type, @Minutes2, @Reps2, @Laps2, @Weight2, @Inty2, @Notes, @DateEx, @TimeEx)
 
 GO
 

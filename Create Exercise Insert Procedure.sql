@@ -69,5 +69,7 @@ Insert Into dbo.Exercise
 Values
 (@UserID2, @LocalExerciseID2, @Title, @Type, @Minutes2, @Reps2, @Laps2, @Weight2, @Inty2, @Notes, @DateEx, @TimeEx)
 
-GO
 
+Select [LocalExerciseID], [WebExerciseID] From dbo.Exercise
+Where [UserID] = @UserID2 AND [LocalExerciseID] = @LocalExerciseID2
+GO

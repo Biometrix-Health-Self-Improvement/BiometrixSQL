@@ -39,5 +39,7 @@ Insert Into dbo.Sleep
 Values
 (@UserID2, @LocalSleepID2, @Date, @Time, @Duration, @Quality2, @Notes, @Health)
 
-GO
 
+Select [LocalSleepID], [WebSleepID] From dbo.Sleep
+Where [UserID] = @UserID2 AND [LocalSleepID] = @LocalSleepID2
+GO

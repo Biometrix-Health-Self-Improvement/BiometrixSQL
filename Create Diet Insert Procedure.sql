@@ -118,5 +118,8 @@ Values
 (@UserID2, @LocalDietID2, @Date, @FoodType, @Meal, @ServingSize, @Calories2, @TotalFat2,
 @SaturatedFat2, @TransFat2, @Cholesterol2, @Sodium2, @TotalCarbs2, @DietaryFiber2, 
 @Sugars2, @Protein2, @VitaminA2, @VitaminB2, @Calcium2, @Iron2, @Notes)
-GO
 
+
+Select [LocalDietID], [WebDietID] From dbo.Diet
+Where [UserID] = @UserID2 AND [LocalDietID] = @LocalDietID2
+GO

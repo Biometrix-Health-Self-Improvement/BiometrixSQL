@@ -32,5 +32,8 @@ Insert Into dbo.Mood
 ([UserID], [LocalMoodID], [Date], [Time], [Depression], [Elevated], [Irritable], [Anxiety], [Notes])
 Values
 (@UserID2, @LocalMoodID2, @Date, @Time, @Depression, @Elevated, @Irritable, @Anxiety, @Notes)
-GO
 
+
+Select [LocalMoodID], [WebMoodID] From dbo.Mood
+Where [UserID] = @UserID2 AND [LocalMoodID] = @LocalMoodID2
+GO

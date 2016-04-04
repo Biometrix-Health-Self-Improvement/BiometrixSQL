@@ -1,4 +1,4 @@
-Use Biometrix
+USE [Biometrix]
 GO
 if Object_ID('DietInsert') is NOT NULL
 BEGIN
@@ -6,119 +6,133 @@ DROP PROCEDURE DietInsert
 END
 GO
 
-CREATE PROCEDURE DietInsert @UserID VARCHAR(50), @LocalDietID VARCHAR(50), @Date DATE, @FoodType VARCHAR(40), 
-@Meal VARCHAR(20), @ServingSize VARCHAR(20), @Calories VARCHAR(50), @TotalFat VARCHAR(50), @SaturatedFat VARCHAR(50),
-@TransFat VARCHAR(50), @Cholesterol VARCHAR(50), @Sodium VARCHAR(50), @TotalCarbs VARCHAR(50), @DietaryFiber VARCHAR(50), @Sugars VARCHAR(50),
-@Protein VARCHAR(50), @VitaminA VARCHAR(50), @VitaminB VARCHAR(50), @Calcium VARCHAR(50), @Iron VARCHAR(50), @Notes VARCHAR(255)
+CREATE PROCEDURE DietInsert @UserID VARCHAR(50), @LocalDietID VARCHAR(50), @Date DATE, 
+@FoodType VARCHAR(40), @Meal VARCHAR(20), @ServingSize VARCHAR(20), @Calories VARCHAR(50), @TotalFat VARCHAR(50), 
+@SaturatedFat VARCHAR(50), @TransFat VARCHAR(50), @Cholesterol VARCHAR(50), @Sodium VARCHAR(50), 
+@TotalCarbs VARCHAR(50), @DietaryFiber VARCHAR(50), @Sugars VARCHAR(50), @Protein VARCHAR(50), 
+@VitaminA VARCHAR(50), @VitaminB VARCHAR(50), @Calcium VARCHAR(50), @Iron VARCHAR(50), @Notes VARCHAR(255)
 AS
 
 DECLARE @UserID2 INT;
-Set @UserID2 = TRY_CONVERT(INT, @UserID);
+SET @UserID2 = TRY_CONVERT(INT, @UserID);
 IF @UserID = ''
 BEGIN
-    Set @UserID2 = NULL;
+	SET @UserID2 = NULL;
 END
+
 DECLARE @LocalDietID2 INT;
-Set @LocalDietID2 = TRY_CONVERT(INT, @LocalDietID);
+SET @LocalDietID2 = TRY_CONVERT(INT, @LocalDietID);
 IF @LocalDietID = ''
 BEGIN
-    Set @LocalDietID2 = NULL;
+	SET @LocalDietID2 = NULL;
 END
+
 DECLARE @Calories2 INT;
-Set @Calories2 = TRY_CONVERT(INT, @Calories);
+SET @Calories2 = TRY_CONVERT(INT, @Calories);
 IF @Calories = ''
 BEGIN
-    Set @Calories2 = NULL;
+	SET @Calories2 = NULL;
 END
+
 DECLARE @TotalFat2 INT;
-Set @TotalFat2 = TRY_CONVERT(INT, @TotalFat);
+SET @TotalFat2 = TRY_CONVERT(INT, @TotalFat);
 IF @TotalFat = ''
 BEGIN
-    Set @TotalFat2 = NULL;
+	SET @TotalFat2 = NULL;
 END
+
 DECLARE @SaturatedFat2 INT;
-Set @SaturatedFat2 = TRY_CONVERT(INT, @SaturatedFat);
+SET @SaturatedFat2 = TRY_CONVERT(INT, @SaturatedFat);
 IF @SaturatedFat = ''
 BEGIN
-    Set @SaturatedFat2 = NULL;
+	SET @SaturatedFat2 = NULL;
 END
+
 DECLARE @TransFat2 INT;
-Set @TransFat2 = TRY_CONVERT(INT, @TransFat);
+SET @TransFat2 = TRY_CONVERT(INT, @TransFat);
 IF @TransFat = ''
 BEGIN
-    Set @TransFat2 = NULL;
+	SET @TransFat2 = NULL;
 END
+
 DECLARE @Cholesterol2 INT;
-Set @Cholesterol2 = TRY_CONVERT(INT, @Cholesterol);
+SET @Cholesterol2 = TRY_CONVERT(INT, @Cholesterol);
 IF @Cholesterol = ''
 BEGIN
-    Set @Cholesterol2 = NULL;
+	SET @Cholesterol2 = NULL;
 END
+
 DECLARE @Sodium2 INT;
-Set @Sodium2 = TRY_CONVERT(INT, @Sodium);
+SET @Sodium2 = TRY_CONVERT(INT, @Sodium);
 IF @Sodium = ''
 BEGIN
-    Set @Sodium2 = NULL;
+	SET @Sodium2 = NULL;
 END
+
 DECLARE @TotalCarbs2 INT;
-Set @TotalCarbs2 = TRY_CONVERT(INT, @TotalCarbs);
+SET @TotalCarbs2 = TRY_CONVERT(INT, @TotalCarbs);
 IF @TotalCarbs = ''
 BEGIN
-    Set @TotalCarbs2 = NULL;
+	SET @TotalCarbs2 = NULL;
 END
+
 DECLARE @DietaryFiber2 INT;
-Set @DietaryFiber2 = TRY_CONVERT(INT, @DietaryFiber);
+SET @DietaryFiber2 = TRY_CONVERT(INT, @DietaryFiber);
 IF @DietaryFiber = ''
 BEGIN
-    Set @DietaryFiber2 = NULL;
+	SET @DietaryFiber2 = NULL;
 END
+
 DECLARE @Sugars2 INT;
-Set @Sugars2 = TRY_CONVERT(INT, @Sugars);
+SET @Sugars2 = TRY_CONVERT(INT, @Sugars);
 IF @Sugars = ''
 BEGIN
-    Set @Sugars2 = NULL;
+	SET @Sugars2 = NULL;
 END
+
 DECLARE @Protein2 INT;
-Set @Protein2 = TRY_CONVERT(INT, @Protein);
+SET @Protein2 = TRY_CONVERT(INT, @Protein);
 IF @Protein = ''
 BEGIN
-    Set @Protein2 = NULL;
+	SET @Protein2 = NULL;
 END
+
 DECLARE @VitaminA2 INT;
-Set @VitaminA2 = TRY_CONVERT(INT, @VitaminA);
+SET @VitaminA2 = TRY_CONVERT(INT, @VitaminA);
 IF @VitaminA = ''
 BEGIN
-    Set @VitaminA2 = NULL;
+	SET @VitaminA2 = NULL;
 END
+
 DECLARE @VitaminB2 INT;
-Set @VitaminB2 = TRY_CONVERT(INT, @VitaminB);
+SET @VitaminB2 = TRY_CONVERT(INT, @VitaminB);
 IF @VitaminB = ''
 BEGIN
-    Set @VitaminB2 = NULL;
+	SET @VitaminB2 = NULL;
 END
+
 DECLARE @Calcium2 INT;
-Set @Calcium2 = TRY_CONVERT(INT, @Calcium);
+SET @Calcium2 = TRY_CONVERT(INT, @Calcium);
 IF @Calcium = ''
 BEGIN
-    Set @Calcium2 = NULL;
+	SET @Calcium2 = NULL;
 END
+
 DECLARE @Iron2 INT;
-Set @Iron2 = TRY_CONVERT(INT, @Iron);
+SET @Iron2 = TRY_CONVERT(INT, @Iron);
 IF @Iron = ''
 BEGIN
-    Set @Iron2 = NULL;
+	SET @Iron2 = NULL;
 END
 
-
 Insert Into dbo.Diet
-([UserID], [LocalDietID], [Date], [FoodType], [Meal], [ServingSize], [Calories], [TotalFat],
-[SaturatedFat], [TransFat], [Cholesterol], [Sodium], [TotalCarbs], [DietaryFiber],
-[Sugars], [Protein], [VitaminA], [VitaminB], [Calcium], [Iron], [Notes])
+([UserID], [LocalDietID], [Date], [FoodType], [Meal], [ServingSize], [Calories], [TotalFat], [SaturatedFat], 
+[TransFat], [Cholesterol], [Sodium], [TotalCarbs], [DietaryFiber], [Sugars], [Protein], [VitaminA], [VitaminB], 
+[Calcium], [Iron], [Notes])
 Values
-(@UserID2, @LocalDietID2, @Date, @FoodType, @Meal, @ServingSize, @Calories2, @TotalFat2,
-@SaturatedFat2, @TransFat2, @Cholesterol2, @Sodium2, @TotalCarbs2, @DietaryFiber2, 
-@Sugars2, @Protein2, @VitaminA2, @VitaminB2, @Calcium2, @Iron2, @Notes)
-
+(@UserID2, @LocalDietID2, @Date, @FoodType, @Meal, @ServingSize, @Calories2, @TotalFat2, @SaturatedFat2, 
+@TransFat2, @Cholesterol2, @Sodium2, @TotalCarbs2, @DietaryFiber2, @Sugars2, @Protein2, @VitaminA2, @VitaminB2, 
+@Calcium2, @Iron2, @Notes)
 
 Select [LocalDietID], [WebDietID] From dbo.Diet
 Where [UserID] = @UserID2 AND [LocalDietID] = @LocalDietID2

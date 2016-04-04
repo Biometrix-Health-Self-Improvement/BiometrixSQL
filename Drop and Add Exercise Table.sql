@@ -10,7 +10,7 @@ GO
 CREATE TABLE [dbo].[Exercise](
 	[WebExerciseID] INT PRIMARY KEY Identity(1,1)
 	, [UserID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[LoginTable]
-	, [LocalExerciseID] INT NULL
+	, [LocalExerciseID] INT NOT NULL
 	, [Title] VARCHAR(255) NULL
 	, [Type] VARCHAR(140) NULL
 	, [Minutes] TINYINT NULL
@@ -21,5 +21,5 @@ CREATE TABLE [dbo].[Exercise](
 	, [Notes] VARCHAR(255) NULL
 	, [DateEx] DATE NOT NULL
 	, [TimeEx] VARCHAR(50) NOT NULL
-	);
+);
 GO

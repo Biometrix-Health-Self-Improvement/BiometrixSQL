@@ -10,7 +10,7 @@ GO
 CREATE TABLE [dbo].[Diet](
 	[WebDietID] INT PRIMARY KEY Identity(1,1)
 	, [UserID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[LoginTable]
-	, [LocalDietID] INT NULL
+	, [LocalDietID] INT NOT NULL
 	, [Date] DATE NOT NULL
 	, [FoodType] VARCHAR(40) NULL
 	, [Meal] VARCHAR(20) NULL
@@ -30,5 +30,5 @@ CREATE TABLE [dbo].[Diet](
 	, [Calcium] INT NULL
 	, [Iron] INT NULL
 	, [Notes] VARCHAR(255) NULL
-	);
+);
 GO

@@ -71,5 +71,5 @@ Update dbo.Exercise
 SET [LocalExerciseID] = @LocalExerciseID2, [Title] = @Title, [Type] = @Type, [Minutes] = @Minutes2, [Reps] = @Reps2, 
 [Laps] = @Laps2, [Weight] = @Weight2, [Inty] = @Inty2, [Notes] = @Notes, [DateEx] = @DateEx, [TimeEx] = @TimeEx
 Where [WebExerciseID] = @WebExerciseID2 AND [UserID] = @UserID2
-
+Select @@RowCount as NumRows
 GO

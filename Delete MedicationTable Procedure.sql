@@ -33,5 +33,5 @@ END
 
 Delete dbo.Medication
 WHERE [WebMedicationID] = @WebMedicationID2 AND [UserID] = @UserID2 AND [LocalMedicationID] = @LocalMedicationID
-
+Select @@RowCount as NumRows
 GO

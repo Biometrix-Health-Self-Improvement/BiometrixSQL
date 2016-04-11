@@ -140,5 +140,5 @@ SET [LocalDietID] = @LocalDietID2, [Date] = @Date, [FoodType] = @FoodType, [Meal
 [Sugars] = @Sugars2, [Protein] = @Protein2, [VitaminA] = @VitaminA2, [VitaminB] = @VitaminB2, [Calcium] = @Calcium2, 
 [Iron] = @Iron2, [Notes] = @Notes
 Where [WebDietID] = @WebDietID2 AND [UserID] = @UserID2
-
+Select @@RowCount as NumRows
 GO

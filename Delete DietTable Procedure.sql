@@ -32,5 +32,5 @@ END
 
 Delete dbo.Diet
 WHERE [WebDietID] = @WebDietID2 AND [UserID] = @UserID2 AND [LocalDietID] = @LocalDietID
-
+Select @@RowCount as NumRows
 GO

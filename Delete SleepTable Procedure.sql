@@ -32,5 +32,5 @@ END
 
 Delete dbo.Sleep
 WHERE [WebSleepID] = @WebSleepID2 AND [UserID] = @UserID2 AND [LocalSleepID] = @LocalSleepID
-
+Select @@RowCount as NumRows
 GO

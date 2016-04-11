@@ -42,5 +42,5 @@ Update dbo.Sleep
 SET [LocalSleepID] = @LocalSleepID2, [Date] = @Date, [Time] = @Time, [Duration] = @Duration, [Quality] = @Quality2, 
 [Notes] = @Notes, [Health] = @Health
 Where [WebSleepID] = @WebSleepID2 AND [UserID] = @UserID2
-
+Select @@RowCount as NumRows
 GO

@@ -32,5 +32,5 @@ END
 
 Delete dbo.Mood
 WHERE [WebMoodID] = @WebMoodID2 AND [UserID] = @UserID2 AND [LocalMoodID] = @LocalMoodID
-
+Select @@RowCount as NumRows
 GO

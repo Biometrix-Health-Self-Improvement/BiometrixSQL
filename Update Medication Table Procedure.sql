@@ -36,5 +36,5 @@ Update dbo.Medication
 SET [LocalMedicationID] = @LocalMedicationID2, [Date] = @Date, [Time] = @Time, [BrandName] = @BrandName, 
 [Prescriber] = @Prescriber, [Dose] = @Dose, [Instructions] = @Instructions, [Warnings] = @Warnings, [Notes] = @Notes
 Where [WebMedicationID] = @WebMedicationID2 AND [UserID] = @UserID2
-
+Select @@RowCount as NumRows
 GO

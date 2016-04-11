@@ -32,5 +32,5 @@ END
 
 Delete dbo.Exercise
 WHERE [WebExerciseID] = @WebExerciseID2 AND [UserID] = @UserID2 AND [LocalExerciseID] = @LocalExerciseID
-
+Select @@RowCount as NumRows
 GO

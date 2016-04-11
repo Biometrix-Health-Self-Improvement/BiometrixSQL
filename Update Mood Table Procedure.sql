@@ -64,5 +64,5 @@ Update dbo.Mood
 SET [LocalMoodID] = @LocalMoodID2, [Date] = @Date, [Time] = @Time, [Depression] = @Depression2, [Elevated] = @Elevated2, 
 [Irritable] = @Irritable2, [Anxiety] = @Anxiety2, [Notes] = @Notes
 Where [WebMoodID] = @WebMoodID2 AND [UserID] = @UserID2
-
+Select @@RowCount as NumRows
 GO

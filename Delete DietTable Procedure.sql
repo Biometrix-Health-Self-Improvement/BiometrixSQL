@@ -6,7 +6,7 @@ DROP PROCEDURE DietDelete
 END
 GO
 
-CREATE PROCEDURE DietDelete @UserID VARCHAR(50), @LocalDietID VARCHAR(50), @WebDietID VARCHAR(50)
+CREATE PROCEDURE DietDelete @UserID VARCHAR(50), @WebDietID VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -14,13 +14,6 @@ SET @UserID2 = TRY_CONVERT(INT, @UserID);
 IF @UserID = ''
 BEGIN
 	SET @UserID2 = NULL;
-END
-
-DECLARE @LocalDietID2 INT;
-SET @LocalDietID2 = TRY_CONVERT(INT, @LocalDietID);
-IF @LocalDietID = ''
-BEGIN
-	SET @LocalDietID2 = NULL;
 END
 
 DECLARE @WebDietID2 INT;
@@ -31,6 +24,6 @@ BEGIN
 END
 
 Delete dbo.Diet
-WHERE [WebDietID] = @WebDietID2 AND [UserID] = @UserID2 AND [LocalDietID] = @LocalDietID
+WHERE [WebDietID] = @WebDietID2 AND [UserID] = @UserID2
 Select @@RowCount as NumRows
 GO

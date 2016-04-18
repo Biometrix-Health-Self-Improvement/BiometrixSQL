@@ -6,7 +6,7 @@ DROP PROCEDURE SleepDelete
 END
 GO
 
-CREATE PROCEDURE SleepDelete @UserID VARCHAR(50), @LocalSleepID VARCHAR(50), @WebSleepID VARCHAR(50)
+CREATE PROCEDURE SleepDelete @UserID VARCHAR(50), @WebSleepID VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -16,12 +16,6 @@ BEGIN
 	SET @UserID2 = NULL;
 END
 
-DECLARE @LocalSleepID2 INT;
-SET @LocalSleepID2 = TRY_CONVERT(INT, @LocalSleepID);
-IF @LocalSleepID = ''
-BEGIN
-	SET @LocalSleepID2 = NULL;
-END
 
 DECLARE @WebSleepID2 INT;
 SET @WebSleepID2 = TRY_CONVERT(INT, @WebSleepID);
@@ -31,6 +25,6 @@ BEGIN
 END
 
 Delete dbo.Sleep
-WHERE [WebSleepID] = @WebSleepID2 AND [UserID] = @UserID2 AND [LocalSleepID] = @LocalSleepID
+WHERE [WebSleepID] = @WebSleepID2 AND [UserID] = @UserID2
 Select @@RowCount as NumRows
 GO

@@ -7,7 +7,7 @@ END
 GO
 
 CREATE PROCEDURE SleepUpdate @UserID VARCHAR(50), @LocalSleepID VARCHAR(50), @Date DATE, 
-@Time TIME, @Duration TIME, @Quality VARCHAR(50), @Notes VARCHAR(300), @Health VARCHAR(20), @WebSleepID VARCHAR(50)
+@Time TIME, @Duration TIME, @Quality VARCHAR(50), @Notes VARCHAR(300), @WebSleepID VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -40,7 +40,7 @@ END
 
 Update dbo.Sleep
 SET [LocalSleepID] = @LocalSleepID2, [Date] = @Date, [Time] = @Time, [Duration] = @Duration, [Quality] = @Quality2, 
-[Notes] = @Notes, [Health] = @Health
+[Notes] = @Notes
 Where [WebSleepID] = @WebSleepID2 AND [UserID] = @UserID2
 Select @@RowCount as NumRows
 GO

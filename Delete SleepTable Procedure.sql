@@ -16,7 +16,6 @@ BEGIN
 	SET @UserID2 = NULL;
 END
 
-
 DECLARE @WebSleepID2 INT;
 SET @WebSleepID2 = TRY_CONVERT(INT, @WebSleepID);
 IF @WebSleepID = ''

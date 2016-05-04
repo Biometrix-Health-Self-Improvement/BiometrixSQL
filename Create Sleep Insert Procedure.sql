@@ -7,7 +7,7 @@ END
 GO
 
 CREATE PROCEDURE SleepInsert @UserID VARCHAR(50), @LocalSleepID VARCHAR(50), @Date DATE, 
-@Time TIME, @Duration TIME, @Quality VARCHAR(50), @Notes VARCHAR(300), @Health VARCHAR(20)
+@Time TIME, @Duration TIME, @Quality VARCHAR(50), @Notes VARCHAR(300)
 AS
 
 DECLARE @UserID2 INT;
@@ -32,9 +32,9 @@ BEGIN
 END
 
 Insert Into dbo.Sleep
-([UserID], [LocalSleepID], [Date], [Time], [Duration], [Quality], [Notes], [Health])
+([UserID], [LocalSleepID], [Date], [Time], [Duration], [Quality], [Notes])
 Values
-(@UserID2, @LocalSleepID2, @Date, @Time, @Duration, @Quality2, @Notes, @Health)
+(@UserID2, @LocalSleepID2, @Date, @Time, @Duration, @Quality2, @Notes)
 
 Select [LocalSleepID], [WebSleepID] From dbo.Sleep
 Where [UserID] = @UserID2 AND [LocalSleepID] = @LocalSleepID2

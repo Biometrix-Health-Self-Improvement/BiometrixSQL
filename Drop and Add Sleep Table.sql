@@ -16,6 +16,5 @@ CREATE TABLE [dbo].[Sleep](
 	, [Duration] TIME NOT NULL
 	, [Quality] INT NULL
 	, [Notes] VARCHAR(300) NULL
-	, [Health] VARCHAR(20) NULL
 );
 GO

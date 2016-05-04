@@ -7,8 +7,7 @@ END
 GO
 
 CREATE PROCEDURE ExerciseInsert @UserID VARCHAR(50), @LocalExerciseID VARCHAR(50), @Title VARCHAR(255), 
-@Type VARCHAR(140), @Minutes VARCHAR(50), @Reps VARCHAR(50), @Laps VARCHAR(50), @Weight VARCHAR(50), 
-@Inty VARCHAR(50), @Notes VARCHAR(255), @DateEx DATE, @TimeEx VARCHAR(50)
+@Type VARCHAR(140), @Minutes VARCHAR(50), @Inty VARCHAR(50), @Notes VARCHAR(255), @DateEx DATE, @TimeEx VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -32,27 +31,6 @@ BEGIN
 	SET @Minutes2 = NULL;
 END
 
-DECLARE @Reps2 TINYINT;
-SET @Reps2 = TRY_CONVERT(TINYINT, @Reps);
-IF @Reps = ''
-BEGIN
-	SET @Reps2 = NULL;
-END
-
-DECLARE @Laps2 TINYINT;
-SET @Laps2 = TRY_CONVERT(TINYINT, @Laps);
-IF @Laps = ''
-BEGIN
-	SET @Laps2 = NULL;
-END
-
-DECLARE @Weight2 SMALLINT;
-SET @Weight2 = TRY_CONVERT(SMALLINT, @Weight);
-IF @Weight = ''
-BEGIN
-	SET @Weight2 = NULL;
-END
-
 DECLARE @Inty2 TINYINT;
 SET @Inty2 = TRY_CONVERT(TINYINT, @Inty);
 IF @Inty = ''
@@ -61,11 +39,9 @@ BEGIN
 END
 
 Insert Into dbo.Exercise
-([UserID], [LocalExerciseID], [Title], [Type], [Minutes], [Reps], [Laps], [Weight], [Inty], [Notes], [DateEx], 
-[TimeEx])
+([UserID], [LocalExerciseID], [Title], [Type], [Minutes], [Inty], [Notes], [DateEx], [TimeEx])
 Values
-(@UserID2, @LocalExerciseID2, @Title, @Type, @Minutes2, @Reps2, @Laps2, @Weight2, @Inty2, @Notes, @DateEx, 
-@TimeEx)
+(@UserID2, @LocalExerciseID2, @Title, @Type, @Minutes2, @Inty2, @Notes, @DateEx, @TimeEx)
 
 Select [LocalExerciseID], [WebExerciseID] From dbo.Exercise
 Where [UserID] = @UserID2 AND [LocalExerciseID] = @LocalExerciseID2

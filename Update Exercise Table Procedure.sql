@@ -7,8 +7,8 @@ END
 GO
 
 CREATE PROCEDURE ExerciseUpdate @UserID VARCHAR(50), @LocalExerciseID VARCHAR(50), @Title VARCHAR(255), 
-@Type VARCHAR(140), @Minutes VARCHAR(50), @Reps VARCHAR(50), @Laps VARCHAR(50), @Weight VARCHAR(50), 
-@Inty VARCHAR(50), @Notes VARCHAR(255), @DateEx DATE, @TimeEx VARCHAR(50), @WebExerciseID VARCHAR(50)
+@Type VARCHAR(140), @Minutes VARCHAR(50), @Inty VARCHAR(50), @Notes VARCHAR(255), @DateEx DATE, @TimeEx VARCHAR(50), 
+@WebExerciseID VARCHAR(50)
 AS
 
 DECLARE @UserID2 INT;
@@ -32,27 +32,6 @@ BEGIN
 	SET @Minutes2 = NULL;
 END
 
-DECLARE @Reps2 TINYINT;
-SET @Reps2 = TRY_CONVERT(TINYINT, @Reps);
-IF @Reps = ''
-BEGIN
-	SET @Reps2 = NULL;
-END
-
-DECLARE @Laps2 TINYINT;
-SET @Laps2 = TRY_CONVERT(TINYINT, @Laps);
-IF @Laps = ''
-BEGIN
-	SET @Laps2 = NULL;
-END
-
-DECLARE @Weight2 SMALLINT;
-SET @Weight2 = TRY_CONVERT(SMALLINT, @Weight);
-IF @Weight = ''
-BEGIN
-	SET @Weight2 = NULL;
-END
-
 DECLARE @Inty2 TINYINT;
 SET @Inty2 = TRY_CONVERT(TINYINT, @Inty);
 IF @Inty = ''
@@ -68,8 +47,8 @@ BEGIN
 END
 
 Update dbo.Exercise
-SET [LocalExerciseID] = @LocalExerciseID2, [Title] = @Title, [Type] = @Type, [Minutes] = @Minutes2, [Reps] = @Reps2, 
-[Laps] = @Laps2, [Weight] = @Weight2, [Inty] = @Inty2, [Notes] = @Notes, [DateEx] = @DateEx, [TimeEx] = @TimeEx
+SET [LocalExerciseID] = @LocalExerciseID2, [Title] = @Title, [Type] = @Type, [Minutes] = @Minutes2, [Inty] = @Inty2, 
+[Notes] = @Notes, [DateEx] = @DateEx, [TimeEx] = @TimeEx
 Where [WebExerciseID] = @WebExerciseID2 AND [UserID] = @UserID2
 Select @@RowCount as NumRows
 GO

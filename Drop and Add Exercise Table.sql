@@ -14,9 +14,6 @@ CREATE TABLE [dbo].[Exercise](
 	, [Title] VARCHAR(255) NULL
 	, [Type] VARCHAR(140) NULL
 	, [Minutes] TINYINT NULL
-	, [Reps] TINYINT NULL
-	, [Laps] TINYINT NULL
-	, [Weight] SMALLINT NULL
 	, [Inty] TINYINT NULL
 	, [Notes] VARCHAR(255) NULL
 	, [DateEx] DATE NOT NULL

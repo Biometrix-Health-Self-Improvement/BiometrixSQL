@@ -17,6 +17,6 @@ CREATE TABLE [dbo].[Exercise](
 	, [Inty] TINYINT NULL
 	, [Notes] VARCHAR(255) NULL
 	, [DateEx] DATE NOT NULL
-	, [TimeEx] VARCHAR(50) NOT NULL
+	, [TimeEx] TIME NOT NULL
 );
 GO

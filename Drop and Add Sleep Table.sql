@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[Sleep](
 	, [LocalSleepID] INT NOT NULL
 	, [Date] DATE NOT NULL
 	, [Time] TIME NOT NULL
-	, [Duration] TIME NOT NULL
+	, [Duration] TIME NULL
 	, [Quality] INT NULL
 	, [Notes] VARCHAR(300) NULL
 );

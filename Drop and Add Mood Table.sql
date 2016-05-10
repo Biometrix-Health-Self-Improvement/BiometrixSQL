@@ -17,6 +17,9 @@ CREATE TABLE [dbo].[Mood](
 	, [Elevated] INT NULL
 	, [Irritable] INT NULL
 	, [Anxiety] INT NULL
+	, [Sad] INT NULL
+	, [Happy] INT NULL
+	, [Anger] INT NULL
 	, [Notes] VARCHAR(255) NULL
 );
 GO

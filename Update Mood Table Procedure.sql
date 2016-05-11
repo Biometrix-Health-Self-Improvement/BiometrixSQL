@@ -86,5 +86,5 @@ SET [LocalMoodID] = @LocalMoodID2, [Date] = @Date, [Time] = @Time, [Depression] 
 [Irritable] = @Irritable2, [Anxiety] = @Anxiety2, [Sad] = @Sad2, [Happy] = @Happy2, [Anger] = @Anger2, 
 [Notes] = @Notes
 Where [WebMoodID] = @WebMoodID2 AND [UserID] = @UserID2
-Select @@RowCount as NumRows
+Select @@RowCount as NumRows, @WebMoodID2 as WebID
 GO
